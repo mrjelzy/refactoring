@@ -6,19 +6,17 @@ public class Livre {
 	private String auteur;
 	private String categorie;
 	
-	private int etage;
-	private String rayon;
-	private String emplacement;
-	
-	
+	private Localisation localisation = new Localisation();
+
+
 	public Livre(String titre, String auteur, String categorie, int etage, String rayon, String emplacement) {
 		super();
 		this.titre = titre;
 		this.auteur = auteur;
 		this.categorie = categorie;
-		this.etage = etage;
-		this.rayon = rayon;
-		this.emplacement = emplacement;
+		this.localisation.setEtage(etage);
+		this.localisation.setRayon(rayon);
+		this.localisation.setEmplacement(emplacement);
 	}
 	
 	// Getters and Setters
@@ -45,24 +43,24 @@ public class Livre {
 	}
 	
 	public int getEtage() {
-		return etage;
+		return localisation.getEtage();
 	}
 	public void setEtage(int etage) {
-		this.etage = etage;
+		this.localisation.setEtage(etage);
 	}
 	
 	public String getRayon() {
-		return rayon;
+		return localisation.getRayon();
 	}
 	public void setRayon(String rayon) {
-		this.rayon = rayon;
+		this.localisation.setRayon(rayon);
 	}
 	
 	public void setEmplacement(String emplacement) {
-		this.emplacement = emplacement;
+		this.localisation.setEmplacement(emplacement);
 	}
 	public String getEmplacement() {
-		return emplacement;
+		return localisation.getEmplacement();
 	}
 	
 	@Override
@@ -77,7 +75,7 @@ public class Livre {
 	// Un peu de logique
 	
 	public String getLocalisation() {
-		return etage + "-" + rayon +  "-" + emplacement;
+		return localisation.getEtage() + "-" + localisation.getRayon() +  "-" + localisation.getEmplacement();
 	}
 	
 	public void setLocalisation(int etage, String rayon, String emplacement) {
