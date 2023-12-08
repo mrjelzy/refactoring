@@ -2,11 +2,24 @@ package hai913i.refactoring.encapsulatefield;
 
 public class Book {
 	
-	private String title;
-	private String autor;
-	private String category;
+	public String title;
+	public String autor;
+	public String category;
 	
-//	private int floor;
-//	private String district;
-//	private String place;
+	
+	
+	public Book(String title, String autor, String category) {
+		super();
+		this.title = title;
+		this.autor = autor;
+		this.category = category;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", autor=" + autor + ", category=" + category + "]";
+	}
+		
 }

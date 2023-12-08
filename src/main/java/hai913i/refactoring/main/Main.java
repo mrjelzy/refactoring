@@ -1,5 +1,7 @@
 package hai913i.refactoring.main;
 
+import hai913i.refactoring.encapsulatefield.Book;
+import hai913i.refactoring.encapsulatefield.Library;
 import hai913i.refactoring.extractclass.Bibliotheque;
 import hai913i.refactoring.extractclass.Livre;
 
@@ -25,6 +27,29 @@ public class Main {
             System.out.println(livre.toString());
         }
         
-	}
+        //Encapsulate Field
+        
+        Book book1 = new Book("Astérix le gaulois", "René Goscinny ", "BD");
+        Book book2 = new Book("Odyssée", "Homère", "Roman");
 
+        // Création de la bibliothèque en utilisant le constructeur
+        Library library = new Library("Bibliothèque Brassens", "50 Rue Georges Brassens", "0123456789", "France");
+
+        book1.autor = "Albert Uderzo";
+        
+        // Ajout des livres à la bibliothèque
+        library.ajoutLivre(book1);
+        library.ajoutLivre(book2);
+
+        // Affichage des informations de la bibliothèque
+        System.out.println("\nEncapsulate Field");
+        System.out.println(library);
+
+        System.out.println("\nListe des livres:");
+        // Affichage des informations des livres
+        for (Book book : library.books) {
+            System.out.println(book);
+        }
+    }
+        
 }
