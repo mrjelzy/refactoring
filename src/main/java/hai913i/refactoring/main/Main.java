@@ -35,7 +35,7 @@ public class Main {
         // Création de la bibliothèque en utilisant le constructeur
         Library library = new Library("Bibliothèque Brassens", "50 Rue Georges Brassens", "0123456789", "France");
 
-        book1.autor = "Albert Uderzo";
+        book1.setAutor("Albert Uderzo");
         
         // Ajout des livres à la bibliothèque
         library.ajoutLivre(book1);
@@ -47,7 +47,7 @@ public class Main {
 
         System.out.println("\nListe des livres:");
         // Affichage des informations des livres
-        for (Book book : library.books) {
+        for (Book book : library.getBooks()) {
             System.out.println(book);
         }
     }
